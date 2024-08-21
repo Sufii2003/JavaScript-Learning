@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>changing the color</h1>
+    <button class="btn">Click Me</button>
+</body>
+<script>
+    const body = document.querySelector("body")
+    const changeColor = document.querySelector('.btn')
+    const ColorCollection = ['orange','red', 'blue', 'purple' , 'yellow']
+
+    // const newColor = changeColor.addEventListener('click' , function () {
+    //     Math.random()*ColorCollection.length
+    //     console.log(newColor);
+        
+    // })
+
+    changeColor.addEventListener('click' , changeNewColor)
+
+    function changeNewColor(){
+        const randomColor = parseInt(Math.random()*ColorCollection.length)
+        body.style.backgroundColor = ColorCollection[randomColor]
+    }
+</script>
+</html>

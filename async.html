@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Chai aur code</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <script>
+        let intervalId; // Variable to keep track of the interval
+
+        const sayDate = function(str) {
+            console.log(str, Date.now());
+        };
+
+        // Function to start the interval
+        const startInterval = () => {
+            if (!intervalId) { // Only start if not already running
+                intervalId = setInterval(() => sayDate("hii how are you"), 1000);
+                console.log("Started");
+            }
+        };
+
+        // Function to stop the interval
+        const stopInterval = () => {
+            if (intervalId) { // Only stop if running
+                clearInterval(intervalId);
+                intervalId = null; // Reset the interval ID
+                console.log("Stopped");
+            }
+        };
+
+        // Attach event listeners to buttons
+        document.querySelector('#start').addEventListener('click', startInterval);
+        document.querySelector('#stop').addEventListener('click', stopInterval);
+    </script>
+</body>
+</html>
+ 
